@@ -3840,5 +3840,4 @@ body.dark .profile-card {
         padding: 16px;
     }
 }
-
-
+/* ================= THEME BUTTON ================= */ .theme-button { width: 42px; height: 42px; border: 1px solid var(--border); border-radius: 50%; background: var(--surface); color: var(--primary); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 17px; transition: var(--transition); } .theme-button:hover { background: var(--surface-alt); transform: translateY(-2px); }

@@ -121,37 +121,26 @@ updateActiveNav();
 
 /* ================= DARK MODE ================= */
 
-const themeButton = document.getElementById("theme-button");
+document.addEventListener("DOMContentLoaded", function () {
 
-if (themeButton) {
+    const themeButton = document.getElementById("theme-button");
 
-    // Start the website in light mode
-    const savedTheme = "light";
-
-    if (savedTheme === "dark") {
-
-        document.body.classList.add("dark");
-
-        themeButton.innerHTML =
-            '<i class="fa-solid fa-sun"></i>';
-
-    } else {
-
-        document.body.classList.remove("dark");
-
-        themeButton.innerHTML =
-            '<i class="fa-solid fa-moon"></i>';
-
+    if (!themeButton) {
+        return;
     }
 
-    themeButton.addEventListener("click", () => {
+    // Website starts in light mode
+    document.body.classList.remove("dark");
+
+    themeButton.innerHTML =
+        '<i class="fa-solid fa-moon"></i>';
+
+    // Dark mode button
+    themeButton.addEventListener("click", function () {
 
         document.body.classList.toggle("dark");
 
-        const isDark =
-            document.body.classList.contains("dark");
-
-        if (isDark) {
+        if (document.body.classList.contains("dark")) {
 
             themeButton.innerHTML =
                 '<i class="fa-solid fa-sun"></i>';
@@ -160,12 +149,12 @@ if (themeButton) {
 
             themeButton.innerHTML =
                 '<i class="fa-solid fa-moon"></i>';
+
         }
 
     });
 
-}
-
+});
 
 /* ================= SCROLL REVEAL ================= */
 
