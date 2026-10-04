@@ -125,8 +125,8 @@ const themeButton = document.getElementById("theme-button");
 
 if (themeButton) {
 
-    // Start in light mode unless the visitor has chosen dark mode
-   const savedTheme = "light";
+    // Start the website in light mode
+    const savedTheme = "light";
 
     if (savedTheme === "dark") {
 
@@ -153,14 +153,10 @@ if (themeButton) {
 
         if (isDark) {
 
-            localStorage.setItem("theme", "dark");
-
             themeButton.innerHTML =
                 '<i class="fa-solid fa-sun"></i>';
 
         } else {
-
-            localStorage.setItem("theme", "light");
 
             themeButton.innerHTML =
                 '<i class="fa-solid fa-moon"></i>';
@@ -169,6 +165,7 @@ if (themeButton) {
     });
 
 }
+
 
 /* ================= SCROLL REVEAL ================= */
 
