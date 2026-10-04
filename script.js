@@ -119,13 +119,13 @@ window.addEventListener("scroll", updateActiveNav);
 
 updateActiveNav();
 
-
 /* ================= DARK MODE ================= */
 
 const themeButton = document.getElementById("theme-button");
 
 if (themeButton) {
 
+    // Start in light mode unless the visitor has chosen dark mode
     const savedTheme = localStorage.getItem("theme");
 
     if (savedTheme === "dark") {
@@ -135,8 +135,14 @@ if (themeButton) {
         themeButton.innerHTML =
             '<i class="fa-solid fa-sun"></i>';
 
-    }
+    } else {
 
+        document.body.classList.remove("dark");
+
+        themeButton.innerHTML =
+            '<i class="fa-solid fa-moon"></i>';
+
+    }
 
     themeButton.addEventListener("click", () => {
 
@@ -144,7 +150,6 @@ if (themeButton) {
 
         const isDark =
             document.body.classList.contains("dark");
-
 
         if (isDark) {
 
@@ -159,13 +164,11 @@ if (themeButton) {
 
             themeButton.innerHTML =
                 '<i class="fa-solid fa-moon"></i>';
-
         }
 
     });
 
 }
-
 
 /* ================= SCROLL REVEAL ================= */
 
