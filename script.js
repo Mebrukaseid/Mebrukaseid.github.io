@@ -126,7 +126,7 @@ const themeButton = document.getElementById("theme-button");
 if (themeButton) {
 
     // Start in light mode unless the visitor has chosen dark mode
-    const savedTheme = localStorage.getItem("theme");
+   const savedTheme = "light";
 
     if (savedTheme === "dark") {
 
